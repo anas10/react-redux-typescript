@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": "dist",
+    "diagnostics": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "jsx": "react"
+  },
+  "include": [
+    "./typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

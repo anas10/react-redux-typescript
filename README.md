@@ -26,7 +26,7 @@ To introduce a new Reducer, remember to add it into `./app/configureStoreAndHist
 
 **All CSS lives in `./public/css`.**
 
-The Sass project builds on the Google Material Design project (`./public/css/src/vendor/materialize-src`), however all custom styling is located in the root of `./public/css/src`.
+The Sass project is built on top of Google Material Design (`./public/css/src/vendor/materialize-src`), however all custom styling is located in the root of `./public/css/src`.
 
 In order to compile sass and minify the resulting css, run
 

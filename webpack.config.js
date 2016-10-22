@@ -20,7 +20,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: false,
-            template: 'app/index.tpl.ejs',
+            template: 'app/index.ejs',
             filename: 'index.html',
             title: 'React Node Webpack Typescript',
             files: {

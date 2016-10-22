@@ -1,1 +1,1 @@
-export enum NotificationType {Info, Warning, Error, Success}
+export enum NotificationType {Default= 1, Info, Warning, Error, Success}

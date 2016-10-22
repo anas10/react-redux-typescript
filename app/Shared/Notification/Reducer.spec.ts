@@ -1,28 +1,27 @@
-import * as Immutable from 'immutable'
-import * as Actions from './Actions'
-import {NotificationType} from './Dto'
-import Reducer, {INotificationReducer} from './Reducer'
+import * as Actions from "./Actions";
+import {NotificationType} from "./Dto";
+import Reducer, {NotificationState} from "./Reducer";
 
 describe('Notification Reducer', () => {
-    let latestState:Immutable.Map<string,any>;
+    let latestState:NotificationState;
 
     it('is a Redux store configured with the correct reducer', () => {
-        const
-            action = {type: null},
-            newReducer = Reducer(undefined, action).toJS();
+        const action = {
+            type: '',
+            notificationText: '',
+            notificationType: NotificationType.Default,
+            notificationClassName: ''
+        };
 
-        expect(newReducer).toEqual({
-            isShown: false,
-            text: null,
-            type: null,
-            className: null
-        });
+        const newReducer = Reducer(undefined, action);
+
+        expect(newReducer).toEqual(new NotificationState());
     });
 
     it('updates the Reducer after showing a notification has been requested', () => {
         const
             action = Actions.showNotification('Hello, World!', NotificationType.Success),
-            newReducer:INotificationReducer = Reducer(undefined, action).toJS();
+            newReducer:NotificationState = Reducer(undefined, action);
 
         expect(newReducer.isShown).toBe(true);
         expect(newReducer.text).toEqual('Hello, World!');
@@ -36,7 +35,7 @@ describe('Notification Reducer', () => {
     it('updates the Reducer after hiding a notification has been requested', () => {
         const
             action = Actions.hideNotification(),
-            newReducer:INotificationReducer = Reducer(latestState, action).toJS();
+            newReducer:NotificationState = Reducer(latestState, action).toJS();
 
         expect(newReducer.isShown).toBe(false);
         expect(newReducer.text).toEqual('Hello, World!');

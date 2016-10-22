@@ -6,7 +6,7 @@ describe('Notification actions', () => {
         const expectedAction = {
             type: Actions.SHOW_NOTIFICATION,
             notificationText: 'There has been an error',
-            notificationType: undefined,
+            notificationType: NotificationType.Info,
             notificationClassName: 'info'
         };
 
@@ -16,17 +16,20 @@ describe('Notification actions', () => {
     it('should create an action to show a notification (accidentally with no method)', () => {
         const expectedAction = {
             type: Actions.SHOW_NOTIFICATION,
-            notificationText: null,
+            notificationText: '',
             notificationType: NotificationType.Error,
             notificationClassName: 'error'
         };
 
-        expect(Actions.showNotification(null, NotificationType.Error)).toEqual(expectedAction);
+        expect(Actions.showNotification('', NotificationType.Error)).toEqual(expectedAction);
     });
 
     it('should create an action to hide a notification', () => {
         const expectedAction = {
-            type: Actions.HIDE_NOTIFICATION
+            type: Actions.HIDE_NOTIFICATION,
+            notificationText: '',
+            notificationType: NotificationType.Default,
+            notificationClassName: ''
         };
 
         expect(Actions.hideNotification()).toEqual(expectedAction);

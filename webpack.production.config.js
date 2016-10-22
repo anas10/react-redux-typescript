@@ -19,7 +19,7 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new HtmlWebpackPlugin({
             inject: false,
-            template: 'app/index.tpl.prod.ejs',
+            template: 'app/index.prod.ejs',
             filename: 'index.html',
             title: 'React Node Webpack Typescript',
             files: {

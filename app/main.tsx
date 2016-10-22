@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {Router, IndexRoute, Route} from 'react-router'
+import {Router, Route} from 'react-router'
 
 import {store, history} from './configureStoreAndHistory'
 

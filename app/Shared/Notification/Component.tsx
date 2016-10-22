@@ -1,17 +1,16 @@
-import * as React from 'react'
-import {connect} from 'react-redux'
-
-import {hideNotification} from './Actions'
-import {INotificationReducer} from './Reducer'
+import * as React from "react";
+import {connect} from "react-redux";
+import {hideNotification} from "./Actions";
+import {NotificationState} from "./Reducer";
 
 interface IProps extends React.Props<any> {
-    Notification:INotificationReducer;
+    Notification:NotificationState;
     hideNotification:() => void;
 }
 
 function mapStateToProps(state:any) {
     return {
-        Notification: state.NotificationReducer.toJS()
+        Notification: state.NotificationReducer
     };
 }
 

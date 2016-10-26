@@ -9,7 +9,9 @@ Thumbs.db
 .idea
 
 .env
+.env.production
+.yarnclean
 
-bower_components
-node_modules
-dist
+bower_components/
+node_modules/
+dist/

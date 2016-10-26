@@ -1,3 +1,8 @@
+require('dotenv').config({
+    silent: false,
+    path: '.env'
+});
+
 'use strict';
 
 const
@@ -8,9 +13,10 @@ const
 
 module.exports = {
     devtool: 'eval-source-map',
+    devServer: {inline: true},
     entry: {
-        a: 'webpack-hot-middleware/client?reload=true',
-        b: path.join(__dirname, 'app', 'main.tsx')
+        a: 'webpack-dev-server/client?http://localhost:' + process.env.PORT + '/',
+        b: path.join(__dirname, 'src', 'main.tsx')
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -20,7 +26,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: false,
-            template: 'app/index.ejs',
+            template: 'src/index.ejs',
             filename: 'index.html',
             title: 'React Node Webpack Typescript',
             files: {
@@ -36,11 +42,10 @@ module.exports = {
             }
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new WebpackNotifierPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ],
     resolve: {

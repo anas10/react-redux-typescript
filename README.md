@@ -44,11 +44,11 @@ And then to serve:
 
 ### JS / TS
 
-**All JavaScript lives in `./app`.**
+**All JavaScript lives in `./src`.**
 
-For a simple Component example, visit `./app/Welcome/Component.tsx`. For a more comprehensive example of a connected component, visit `./app/Shared/Notification`.
+For a simple Component example, visit `./src/Welcome/Component.tsx`. For a more comprehensive example of a connected component, visit `./src/Shared/Notification`.
 
-To introduce a new Reducer, remember to add it into `./app/configureStoreAndHistory.ts` (following the NotificationReducer example).
+To introduce a new Reducer, remember to add it into `./src/configureStoreAndHistory.ts` (following the NotificationReducer example).
 
 ### CSS / Sass
 

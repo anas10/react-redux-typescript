@@ -4,6 +4,8 @@ Please make sure you have the **yarn package manager**.
 
     npm install yarn -g
 
+Then:
+
     git clone git@github.com:slavomirvojacek/react-redux-typescript.git
     yarn install
     

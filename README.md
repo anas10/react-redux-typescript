@@ -26,6 +26,20 @@ Update `.env.production` so the value of **NODE_ENV** is `production`
 
     npm test
 
+## Production build
+
+First compile everything into `./dist`:
+
+    npm run compile:src
+    # Alias for ./bin/compile-src
+    
+This compiles the React App and copies over css, images, and fonts.
+
+And then to serve:
+
+    npm run serve:prod
+    # Alias for ./bin/serve-app-prod
+
 ## Architecture
 
 ### JS / TS
